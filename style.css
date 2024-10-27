@@ -26,8 +26,8 @@ body::before {
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   width: 55%;
-  height: 50%;
-  margin-bottom: 90px;
+  height: 60%;
+  margin-bottom: 60px;
 }
 .login-container img {
   width: 60px;
