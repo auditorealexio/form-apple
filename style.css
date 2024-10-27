@@ -76,8 +76,7 @@ body::before {
 .arrow-button {
   position: absolute;
   top: 50%;
-  right: 0px;
-  left: 250px;
+  right: 15px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -100,8 +99,7 @@ body::before {
 .arrow-button-1 {
   position: absolute;
   top: 50%;
-  right: 0px;
-  left: 250px;
+  right: 15px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -215,7 +213,7 @@ body::before {
   height: 40px; /* Alto del input */
   text-align: center; /* Centrar texto */
   font-size: 24px; /* Tamaño de fuente */
-  margin: 0 5px; /* Espacio entre inputs */
+  margin: 0 2px; /* Espacio entre inputs */
   border: 1px solid #ccc; /* Borde del input */
   border-radius: 10px; /* Bordes redondeados */
 }
