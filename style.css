@@ -25,12 +25,12 @@ body::before {
   padding: 70px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  width: 90%;
-  max-width: 400px;
+  width: 55%;
+  height: 50%;
+  margin-bottom: 90px;
 }
 .login-container img {
   width: 60px;
-  margin-bottom: 20px;
 }
 .login-container h1 {
   font-size: 24px;
@@ -76,7 +76,7 @@ body::before {
 .arrow-button {
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 10px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -99,7 +99,7 @@ body::before {
 .arrow-button-1 {
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 10px;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
@@ -210,10 +210,10 @@ body::before {
 
 .code-input {
   width: 20px; /* Ancho del input */
-  height: 40px; /* Alto del input */
+  height: 30px; /* Alto del input */
   text-align: center; /* Centrar texto */
   font-size: 24px; /* Tamaño de fuente */
-  margin: 0 2px; /* Espacio entre inputs */
+  margin: 0 1px; /* Espacio entre inputs */
   border: 1px solid #ccc; /* Borde del input */
   border-radius: 10px; /* Bordes redondeados */
 }
