@@ -19,6 +19,23 @@ body::before {
   background: url('background.png') center/cover no-repeat; /* Ruta de la imagen */
   z-index: -1;
 }
+.login-container-2 {
+  text-align: center;
+  background: white;
+  padding: 70px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 55%;
+  height: 32%;
+  margin-bottom: 60px;
+}
+.login-container-2 img {
+  width: 60px;
+}
+.login-container-2 h1 {
+  font-size: 24px;
+  color: #1c1c1e;
+}
 .login-container {
   text-align: center;
   background: white;
