@@ -197,13 +197,13 @@ body {
 }
 
 .code-input {
-  width: 30px; /* Ancho del input */
+  width: 20px; /* Ancho del input */
   height: 40px; /* Alto del input */
   text-align: center; /* Centrar texto */
   font-size: 24px; /* Tamaño de fuente */
   margin: 0 5px; /* Espacio entre inputs */
   border: 1px solid #ccc; /* Borde del input */
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .code-input:focus {
