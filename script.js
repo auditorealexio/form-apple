@@ -6,7 +6,7 @@ function validarEmail(email) {
 }
 
 function validatePassword() {
-    const password = document.getElementById("password-1").value;
+    const password = document.getElementById("password").value;
 
     const minLength = /.{8,}/;
     const hasUpperCase = /[A-Z]/;
