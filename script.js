@@ -5,6 +5,40 @@ function validarEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
+function validatePassword() {
+    const password = document.getElementById("password-1").value;
+
+    const minLength = /.{8,}/;
+    const hasUpperCase = /[A-Z]/;
+    const hasLowerCase = /[a-z]/;
+    const hasNumber = /[0-9]/;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (!minLength.test(password)) {
+        alert("La contraseña debe tener al menos 8 caracteres.");
+        return false;
+    }
+    if (!hasUpperCase.test(password)) {
+        alert("La contraseña debe tener al menos una letra mayúscula.");
+        return false;
+    }
+    if (!hasLowerCase.test(password)) {
+        alert("La contraseña debe tener al menos una letra minúscula.");
+        return false;
+    }
+    if (!hasNumber.test(password)) {
+        alert("La contraseña debe tener al menos un número.");
+        return false;
+    }
+    if (!hasSpecialChar.test(password)) {
+        alert("La contraseña debe tener al menos un carácter especial.");
+        return false;
+    }
+
+    return true; // La validación pasó, se envía el formulario
+}
+
+
 function showPasswordInput1() {
   const appleId = document.getElementById('apple-id-1').value;
   if (validarEmail(appleId)) {
