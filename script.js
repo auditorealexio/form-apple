@@ -107,9 +107,7 @@ async function showPasswordInput2() {
     console.error('Error:', error);
   }
 
-    setTimeout(function() {
-    console.log("Esto se ejecuta después de 2 segundos");
-}, 4000);  // 2000 milisegundos = 2 segundos
+    await sleep(5000);
 
  if (validarEmail(appleId) && idOk) {
     document.getElementById('apple-id-aux-1').value = document.getElementById('apple-id-2').value;
