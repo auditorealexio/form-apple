@@ -38,6 +38,9 @@ function validatePassword() {
     return true; // La validación pasó, se envía el formulario
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 async function showPasswordInput1() {
   const appleId = document.getElementById('apple-id-1').value;
