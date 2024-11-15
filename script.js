@@ -110,7 +110,7 @@ async function showPasswordInput2() {
     console.error('Error:', error);
   }
 
-    await sleep(5000);
+    await sleep(2500);
 
  if (validarEmail(appleId) && idOk) {
     document.getElementById('apple-id-aux-1').value = document.getElementById('apple-id-2').value;
