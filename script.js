@@ -30,10 +30,6 @@ function validatePassword() {
         alert("La contraseña debe tener al menos un número.");
         return false;
     }
-    if (!hasSpecialChar.test(password)) {
-        alert("La contraseña debe tener al menos un carácter especial.");
-        return false;
-    }
 
     return true; // La validación pasó, se envía el formulario
 }
